@@ -107,7 +107,15 @@ class Utils {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             try {
                 Drawable appIcon = activity.getPackageManager().getApplicationIcon(activity.getPackageName());
-                Bitmap bm = ((BitmapDrawable) appIcon).getBitmap();
+                Bitmap bm = null;
+                try { 
+                    bm = ((BitmapDrawable) appIcon).getBitmap();
+                    }catch (java.lang.ClassCastException e){
+                                    
+                    bm = ((AdaptiveIconDrawable) appIcon).getBitmap();
+
+                }
+              
                 int recentAppsStyleColor = ContextCompat.getColor(activity, targetColor);
                 ActivityManager.TaskDescription taskDescription =
                         new ActivityManager.TaskDescription(
