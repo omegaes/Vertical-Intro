@@ -14,6 +14,8 @@ import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.TextView;
+import android.graphics.drawable.AdaptiveIconDrawable;
+
 
 /**
  * Created by Chatikyan on 20.10.2016.
