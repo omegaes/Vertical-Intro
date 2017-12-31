@@ -14,7 +14,6 @@ import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.TextView;
-import android.graphics.drawable.AdaptiveIconDrawable;
 
 
 /**
@@ -111,10 +110,11 @@ class Utils {
                 Drawable appIcon = activity.getPackageManager().getApplicationIcon(activity.getPackageName());
                 Bitmap bm = null;
                 try { 
+
                     bm = ((BitmapDrawable) appIcon).getBitmap();
                     }catch (java.lang.ClassCastException e){
                                     
-                    bm = ((AdaptiveIconDrawable) appIcon).getBitmap();
+                //    bm = ((AdaptiveIconDrawable) appIcon).getBitmap();
 
                 }
               
